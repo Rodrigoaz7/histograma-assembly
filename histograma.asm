@@ -2,7 +2,7 @@
 
 	.globl	main
 main:
-
+	# Iniciando registrados estáticos e alguns contadores
 	la $s1, H
 	lw $s2, tamanhoH
 	li $t9, 0
@@ -25,8 +25,8 @@ main:
 	# ----- FIM DO LAÇO PARA ZERAR VETOR H -----
 
 	endForH:
-    		add $t1, $t0, $s3    # combine the two components of the address
-    		lw $t2, 0($t1)       # get the value from the array cell
+    		add $t1, $t0, $s3    # capturando endereco do proximo pixel
+    		lw $t2, 0($t1)       # armazenando pixel em t2
    		
 		add $t2, $t2, $t2
     		add $t2, $t2, $t2 # Incrementa a posicao do pixel
